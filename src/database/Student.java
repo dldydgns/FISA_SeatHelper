@@ -10,7 +10,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Student {
-	 String name;
-	 int age;
-	 char[] mbti;
+	int no;
+	String name;
+	int age;
+	String mbti;
+	boolean glass;
 }
