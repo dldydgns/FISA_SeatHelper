@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Database {
-	private static String studentFile = "C:\\ce5\\01.java\\01_SeatHelper\\src\\database\\student.txt";
-	private static String seatFile = "C:\\\\ce5\\\\01.java\\\\01_SeatHelper\\\\src\\\\database\\\\seat.txt";
 	
+	private static String studentFile = "src/database/student.txt";
+	private static String seatFile = "src/database/seat.txt";
+
 	private static ArrayList<Student> students = new ArrayList<>();
 	
 	static {
