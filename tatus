@@ -1,0 +1,13 @@
+*   [33mfb945f2[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on main: 322288f View & domain package 추가
+[31m|[m[32m\[m  
+[31m|[m * [33m106f70d[m index on main: 322288f View & domain package 추가
+[31m|[m[31m/[m  
+[31m|[m * [33ma034f64[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #1 from dldydgns/feature
+[31m|[m[31m/[m[34m|[m 
+[31m|[m * [33m49f3548[m[33m ([m[1;31mupstream/feature[m[33m)[m model.domain제거
+[31m|[m[31m/[m  
+* [33m322288f[m[33m ([m[1;31mupstream/develop[m[33m)[m View & domain package 추가
+* [33mb1d1a5b[m MVC패키치 기본 선언
+* [33m1aa48f8[m 프로젝트 생성과 Maven, Lombok, junit 설정
+* [33m5034409[m[33m ([m[1;32mfeature/view[m[33m)[m 프로젝트 생성과 Maven, Lombok, junit 설정
+* [33m2c1fd06[m Initial commit
