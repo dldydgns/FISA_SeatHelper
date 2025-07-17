@@ -76,7 +76,7 @@ FISA 5기 클라우드 엔지니어링 반장을 도와주기 위한 자동 자�
 CREATE TABLE student (
     no INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    birth_year INT,
+    age INT,
     mbti VARCHAR(4),
     wears_glasses BOOLEAN
 );
