@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import info.SeatInfo;
@@ -138,6 +139,8 @@ public class Database {
 
 	public Student getPartnerStudentByNo(int no, ArrayList<Integer> picked) throws SQLException {
 
+		int RandomCount = 3;
+
 		ArrayList<Integer> excluded = new ArrayList<>(picked);
 		excluded.add(no);
 
@@ -154,12 +157,15 @@ public class Database {
 	        sqlBuffer.append("AND ph.partner_no NOT IN (").append(placeholders).append(") ");
 	    }
 
-	    sqlBuffer.append("GROUP BY ph.partner_no ")
-	             .append("ORDER BY COUNT(*) ASC, ph.partner_no ASC ")
-	             .append("LIMIT 1");
+		// 안경쓴사람 우선으로 앞열 배치, 이후 가나다순 4명
+		sqlBuffer.append("GROUP BY ph.partner_no ")
+				.append("ORDER BY COUNT(*) ASC, s.glass DESC, ph.partner_no ASC ")
+				.append("LIMIT ")
+				.append(RandomCount);
+
 
 		
-		Student student = null;
+		Student[] students = new Student[RandomCount];
 
 		try (Connection conn = DBUtil.getConnection(); 
 				PreparedStatement pstmt = conn.prepareStatement(sqlBuffer.toString())) {
@@ -173,17 +179,20 @@ public class Database {
 
 			ResultSet rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				student = new Student(
+			int idx = 0;
+			while (rs.next()) {
+				students[idx] = new Student(
 						rs.getInt("no"),
 						rs.getString("name"), 
 						rs.getInt("age"), 
 						rs.getString("mbti"),
 						rs.getBoolean("glass"));
+
+				idx++;
 			}
 		}
 
-		return student;
+		return students[new Random().nextInt(students.length)];
 	}
 
 	
