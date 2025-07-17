@@ -78,7 +78,7 @@ CREATE TABLE student (
     name VARCHAR(50) NOT NULL,
     age INT,
     mbti VARCHAR(4),
-    wears_glasses BOOLEAN
+    glass BOOLEAN
 );
 ```
 
