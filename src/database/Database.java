@@ -108,7 +108,7 @@ public class Database {
 
 	public ArrayList<Student> getAllStudents() throws SQLException {
 
-		String sql = "select * from student";
+		String sql = "SELECT * FROM student";
 
 		ArrayList<Student> students = null;
 
@@ -287,6 +287,27 @@ public class Database {
 	    }
 	    
 	}
+
+
+    public ArrayList<String> getAllRandomStudentsName() throws SQLException {
+
+		String sql = "SELECT name FROM student ORDER BY RAND()";
+
+		ArrayList<String> names = null;
+
+		try (Connection conn = DBUtil.getConnection(); 
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery()) {
+
+			names = new ArrayList<>();
+			
+			while (rs.next()) {
+				names.add(rs.getString("name"));
+			}
+		}
+
+		return names;
+    }
 
 }
 
