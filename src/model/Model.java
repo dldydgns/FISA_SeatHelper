@@ -1,8 +1,5 @@
 package model;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -87,6 +84,11 @@ public class Model {
 	public void saveCurrentSeat(String[][] seat) throws SQLException {
 		db.saveCurrentSeatToFile(seat);
 		db.saveCurrentSeatToDB(seat);
+	}
+
+	// 4. 랜덤 순서로 전체인원 가져오기
+	public ArrayList<String> getRandomStudentsName() throws SQLException {
+		return db.getAllRandomStudentsName();
 	}
 	
 	// =========================== 로컬 함수 ===========================

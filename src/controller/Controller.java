@@ -11,6 +11,7 @@ import database.Student;
 import model.Model;
 import view.ConsoleView;
 import view.StudentPrinter;
+import view.TeamView;
 
 public class Controller {
 	
@@ -88,6 +89,23 @@ public class Controller {
 		
 	}
 	
-	
+	// 4. 랜덤 팀 구성하여 출력
+	public static void printRandomTeam() {
+
+		try {
+			ArrayList<String> names = model.getRandomStudentsName();
+			
+			if (!names.isEmpty()) {
+				TeamView.printTeams(names);
+			} else {
+				view.printMessage(YELLOW + "⚠️ 저장된 학생 데이터가 없습니다." + RESET);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			view.printMessage(YELLOW + "⚠️ 문제가 발생했습니다. 재실행 해 주세요!" + RESET);
+		}
+
+	}
 	
 }

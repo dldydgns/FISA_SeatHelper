@@ -29,10 +29,11 @@ public class ConsoleView {
         System.out.println(BLUE + "=========================================================================================" + RESET);
         System.out.println(BOLD + "                             우리 FISA 자리 배치 프로그램" + RESET);
         System.out.println(BLUE + "=========================================================================================" + RESET);
-        System.out.println(YELLOW + " 1. 모든 수강생 보기");
+        System.out.println(GREEN + " 1. 모든 수강생 보기");
         System.out.println(YELLOW + " 2. 랜덤 자리 배치 보기");
         System.out.println(YELLOW + " 3. 현재 자리 보기");
-        System.out.println(" 0. 종료" + RESET);
+        System.out.println(BLUE + " 4. 랜덤 팀 구성하기");
+        System.out.println(RED + " 0. 종료" + RESET);
         System.out.println("-----------------------------------------------------------------------------------------");
         System.out.print(" 메뉴를 선택하세요 " + GREEN + "▶ " + RESET);
     }

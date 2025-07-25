@@ -35,6 +35,9 @@ public class StartView {
 			} else if (choice == 3) { // 3. 현재 자리 보기
 				Controller.printCurrentSeats();
 				
+			} else if (choice == 4) {
+				Controller.printRandomTeam();
+
 			} else if (choice == 0) {
 				view.printMessage(RED + "\n❌ 프로그램을 종료합니다. 다음에 또 만나요! 💫" + RESET);
 				break; // 0. 프로그램 종료
